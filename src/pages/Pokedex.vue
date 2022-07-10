@@ -1,12 +1,7 @@
-<template>
-
-  </template>
+<template></template>
 
 <script setup>
-  import store from './store'
-
+import store from "./store";
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

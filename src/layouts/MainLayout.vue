@@ -69,8 +69,6 @@ const linksList = [
     icon: "rss_feed",
     link: "https://twitter.quasar.dev",
   },
-
-
 ];
 
 import { defineComponent, ref } from "vue";

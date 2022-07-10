@@ -1,46 +1,55 @@
 <template>
-  <img src="../assets/images.png" class="img" alt="image">
+  <img src="../assets/images.png" class="img" alt="image" />
   <div class="flex-container">
-    <q-card class="card" v-for="(pokemon, index) in store.state.data" :key="index" @click="showDialog(pokemon)">
+    <q-card
+      class="card"
+      v-for="(pokemon, index) in store.state.data"
+      :key="index"
+      @click="showDialog(pokemon)"
+    >
       <q-img :src="pokemon.sprites.front_default" />
       <q-card-section>
         <div class="name">{{ pokemon.name }}</div>
         <div>
-          <q-badge rounded color="dark" v-for="item in pokemon.types" :key="item.name">
+          <q-badge
+            rounded
+            color="dark"
+            v-for="item in pokemon.types"
+            :key="item.name"
+          >
             {{ item.type.name }}
           </q-badge>
         </div>
-        <div class="weight">
-          {{ pokemon.weight }} KG
-        </div>
+        <div class="weight">{{ pokemon.weight }} KG</div>
       </q-card-section>
-      <q-card-section class="q-pt-none">
-      </q-card-section>
+      <q-card-section class="q-pt-none"> </q-card-section>
     </q-card>
   </div>
-  <Dialog v-if="enableDialog" @onClosePopup="closeDialog($event)" :data="pokemonSelected" />
+  <Dialog
+    v-if="enableDialog"
+    @onClosePopup="closeDialog($event)"
+    :data="pokemonSelected"
+  />
 </template>
 
 <script setup>
+import store from "./store";
+import Dialog from "./Dialog.vue";
+import { ref } from "vue";
 
-import store from './store'
-import Dialog from './Dialog.vue'
-import { ref } from 'vue'
-
-const enableDialog = ref(false)
-const pokemonSelected = ref({})
+const enableDialog = ref(false);
+const pokemonSelected = ref({});
 
 const showDialog = (pokemon) => {
-  pokemonSelected.value = pokemon
-  enableDialog.value = true
-}
+  pokemonSelected.value = pokemon;
+  enableDialog.value = true;
+};
 
 const closeDialog = (item) => {
-  enableDialog.value = item.showDialog
-}
+  enableDialog.value = item.showDialog;
+};
 
-store.actions.getPokemons()
-
+store.actions.getPokemons();
 </script>
 
 <style scoped>
@@ -61,20 +70,20 @@ store.actions.getPokemons()
   border-radius: 20px;
   margin: 15px;
   float: left;
-
 }
 .img {
   display: block;
   width: 30%;
   height: 30%;
-  margin: 0 auto
+  margin: 0 auto;
 }
 .name {
   color: aliceblue;
   font-weight: bold;
   font-size: 20px;
   text-transform: uppercase;
-}.weight {
+}
+.weight {
   color: rgb(181, 25, 35);
   font-weight: bold;
   font-size: 15px;

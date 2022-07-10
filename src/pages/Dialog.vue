@@ -8,13 +8,18 @@
             <div class="col text-h6 ellipsis">
               {{ data.name }}
             </div>
-            <div class="col-auto text-grey  items-center">
+            <div class="col-auto text-grey items-center">
               <q-icon name="lab la-superpowers" />
               {{ data.weight }} KG
             </div>
           </div>
           <div>
-            <q-badge rounded color="warning" v-for="item in data.types" :key="item.name">
+            <q-badge
+              rounded
+              color="warning"
+              v-for="item in data.types"
+              :key="item.name"
+            >
               {{ item.type.name }}
             </q-badge>
           </div>
@@ -28,13 +33,24 @@
           <q-separator color="yellow-10" inset />
 
           <div class="text-caption move">
-            <q-badge rounded color="dark" v-for="item in data.moves" :key="item">
+            <q-badge
+              rounded
+              color="dark"
+              v-for="item in data.moves"
+              :key="item"
+            >
               {{ item.move.name }}
             </q-badge>
           </div>
         </q-card-section>
         <q-card-actions align="right">
-          <q-btn v-close-popup flat color="grey-1" label="Close" @click="closeDialog" />
+          <q-btn
+            v-close-popup
+            flat
+            color="grey-1"
+            label="Close"
+            @click="closeDialog"
+          />
         </q-card-actions>
 
         <q-separator />
@@ -43,19 +59,18 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue';
-import store from './store'
+import { ref } from "vue";
+import store from "./store";
 
-const card = ref(true)
+const card = ref(true);
 
-const props = defineProps({ data: Object })
-const emit = defineEmits(['onClosePopup'])
-const data = ref(props.data)
+const props = defineProps({ data: Object });
+const emit = defineEmits(["onClosePopup"]);
+const data = ref(props.data);
 
 const closeDialog = () => {
-  emit('onClosePopup', { showDialog: false })
-}
-
+  emit("onClosePopup", { showDialog: false });
+};
 </script>
 
 <style scoped>
@@ -72,7 +87,6 @@ const closeDialog = () => {
   color: aliceblue;
   font-weight: bold;
   font-size: 20px;
-
 }
 
 .desc {
