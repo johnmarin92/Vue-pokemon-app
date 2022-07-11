@@ -25,11 +25,11 @@
       <q-card-section class="q-pt-none"> </q-card-section>
     </q-card>
   </div>
-  <Dialog
+  <!-- <Dialog
     v-if="enableDialog"
     @onClosePopup="closeDialog($event)"
     :data="pokemonSelected"
-  />
+  /> -->
 </template>
 
 <script setup>
