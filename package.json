@@ -6,7 +6,6 @@
   "author": "n",
   "private": true,
   "scripts": {
-    "build": "quasar build",
     "start": "node server.js",
     "heroku-postbuild": "npm && npm build",
     "lint": "eslint --ext .js,.vue ./",
