@@ -5,17 +5,13 @@
   "productName": "poke-app",
   "author": "n",
   "private": true,
-  "scripts": {
+
+  "script": {
     "start": "node server.js",
-    "heroku-postbuild": "npm && npm build",
+    "heroku-postbuild": "npm && npm run build",
     "lint": "eslint --ext .js,.vue ./",
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0"
-  },
-  "script": {
-    "build": "quasar build",
-    "start": "node server.js",
-    "heroku-postbuild": "npm && npm run build"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
