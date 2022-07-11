@@ -17,7 +17,7 @@ const actions = {
   //FUNCION QUE TRAE LISTA DE POKEMONS
   async getPokemons() {
     state.data = [];
-    fetch("https://pokeapi.co/api/v2/pokemonn/")
+    fetch("https://pokeapi.co/api/v2/pokemon/")
     .then((response) => response.json())
     .then((data) => actions.getPokemonsInfo(data.results))
     .catch(function(error) {
