@@ -84,7 +84,7 @@ store.actions.getPokemons();
   text-transform: uppercase;
 }
 .weight {
-  color: rgb(52, 17, 210);
+  color: rgb(70, 156, 221);
   font-weight: bold;
   font-size: 15px;
 }
